@@ -1,0 +1,52 @@
+/* Đặt màu nền và font chữ mặc định */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Tiêu đề chính */
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0d6efd;
+}
+
+/* Mô tả dưới tiêu đề */
+.description {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+/* Khung nhập liệu */
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-box {
+  border: 2px solid #0d6efd;
+  border-radius: 5px;
+}
+
+/* Kết quả quay số */
+.random-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #198754;
+  border: 2px solid #198754;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+  min-width: 100px;
+}
+
+/* Nút bấm */
+button {
+  font-size: 1.2rem;
+  padding: 10px 30px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
