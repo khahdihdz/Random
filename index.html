@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quay Số Ngẫu Nhiên</title>
+  <!-- Link Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Link đến tệp CSS riêng -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container text-center">
+    <h1 class="mb-4 title">Quay Số Ngẫu Nhiên</h1>
+    <p class="lead description">Nhập khoảng số và nhấn nút để quay số</p>
+    
+    <!-- Thiết lập mức quay số -->
+    <div class="row justify-content-center mb-4 input-container">
+      <div class="col-md-4">
+        <input type="number" id="minValue" class="form-control input-box" placeholder="Số nhỏ nhất" value="1">
+      </div>
+      <div class="col-md-4">
+        <input type="number" id="maxValue" class="form-control input-box" placeholder="Số lớn nhất" value="999">
+      </div>
+    </div>
+    
+    <!-- Hiển thị kết quả -->
+    <div class="random-number my-4" id="result">0</div>
+    
+    <!-- Nút quay số -->
+    <button class="btn btn-primary btn-lg" onclick="generateRandomNumber()">Quay Số</button>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function generateRandomNumber() {
+      const minValue = parseInt(document.getElementById('minValue').value);
+      const maxValue = parseInt(document.getElementById('maxValue').value);
+
+      if (isNaN(minValue) || isNaN(maxValue) || minValue >= maxValue) {
+        alert('Vui lòng nhập khoảng số hợp lệ (số nhỏ nhất < số lớn nhất)');
+        return;
+      }
+
+      const randomNumber = Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
+      document.getElementById('result').textContent = randomNumber;
+    }
+  </script>
+</body>
+</html>
