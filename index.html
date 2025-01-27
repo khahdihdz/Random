@@ -11,24 +11,31 @@
 </head>
 <body>
   <div class="container text-center">
-    <h1 class="mb-4 title">Quay Số Ngẫu Nhiên</h1>
-    <p class="lead description">Nhập khoảng số và nhấn nút để quay số</p>
+    <!-- Tiêu đề chính -->
+    <h1 class="main-title">Quay Số Ngẫu Nhiên</h1>
+    <p class="subtitle">Một công cụ đơn giản, hiện đại để quay số ngẫu nhiên!</p>
     
-    <!-- Thiết lập mức quay số -->
-    <div class="row justify-content-center mb-4 input-container">
-      <div class="col-md-4">
-        <input type="number" id="minValue" class="form-control input-box" placeholder="Số nhỏ nhất" value="1">
-      </div>
-      <div class="col-md-4">
-        <input type="number" id="maxValue" class="form-control input-box" placeholder="Số lớn nhất" value="999">
+    <!-- Phần thiết lập mức quay số -->
+    <div class="section">
+      <h2 class="section-title">Thiết lập khoảng số</h2>
+      <div class="row justify-content-center mb-4 input-container">
+        <div class="col-md-4">
+          <input type="number" id="minValue" class="form-control input-box" placeholder="Số nhỏ nhất" value="1">
+        </div>
+        <div class="col-md-4">
+          <input type="number" id="maxValue" class="form-control input-box" placeholder="Số lớn nhất" value="999">
+        </div>
       </div>
     </div>
-    
-    <!-- Hiển thị kết quả -->
-    <div class="random-number my-4" id="result">0</div>
-    
+
+    <!-- Phần kết quả -->
+    <div class="section">
+      <h2 class="section-title">Kết quả</h2>
+      <div class="random-number" id="result">0</div>
+    </div>
+
     <!-- Nút quay số -->
-    <button class="btn btn-primary btn-lg" onclick="generateRandomNumber()">Quay Số</button>
+    <button class="btn btn-primary btn-lg mt-4" onclick="generateRandomNumber()">Quay Số</button>
   </div>
 
   <!-- Bootstrap JS -->
