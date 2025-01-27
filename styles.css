@@ -1,21 +1,32 @@
 /* Đặt màu nền và font chữ mặc định */
 body {
-  background-color: #f8f9fa;
-  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; /* Màu nền sáng xanh nhạt */
+  font-family: 'Roboto', sans-serif;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /* Tiêu đề chính */
-.title {
-  font-size: 2.5rem;
+.main-title {
+  font-size: 3rem;
   font-weight: bold;
-  color: #0d6efd;
+  color: #007bff; /* Màu xanh tươi sáng */
+  margin-top: 20px;
 }
 
-/* Mô tả dưới tiêu đề */
-.description {
+.subtitle {
   font-size: 1.2rem;
-  color: #6c757d;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Tiêu đề cho từng phần */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 20px;
 }
 
 /* Khung nhập liệu */
@@ -24,29 +35,36 @@ body {
 }
 
 .input-box {
-  border: 2px solid #0d6efd;
-  border-radius: 5px;
+  border: 2px solid #007bff; /* Viền xanh tươi sáng */
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
 }
 
 /* Kết quả quay số */
 .random-number {
   font-size: 3rem;
   font-weight: bold;
-  color: #198754;
-  border: 2px solid #198754;
+  color: #28a745; /* Màu xanh lá nổi bật */
+  border: 3px dashed #28a745;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   display: inline-block;
-  min-width: 100px;
+  min-width: 120px;
+  background-color: #e9ffe8; /* Màu nền xanh lá nhạt */
 }
 
 /* Nút bấm */
 button {
   font-size: 1.2rem;
   padding: 10px 30px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #0056b3; /* Màu đậm hơn khi hover */
 }
