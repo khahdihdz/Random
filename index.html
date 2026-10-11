@@ -10,7 +10,7 @@
 <style>
 :root{color-scheme:light;--bg:#f5f6fb;--panel:#fff;--text:#182033;--muted:#687187;--line:#e5e8f0;--accent:#7048e8;--accent2:#8b5cf6;--soft:#f0ebff;--good:#12805c;--shadow:0 16px 44px #25254a0d}
 [data-theme=dark]{color-scheme:dark;--bg:#10121b;--panel:#191c29;--text:#f3f4fb;--muted:#a3a9bd;--line:#303447;--accent:#a78bfa;--accent2:#8b5cf6;--soft:#29213f;--good:#55d6a5;--shadow:0 16px 44px #0003}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:background .2s,color .2s}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #a78bfa;outline-offset:2px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:21px;letter-spacing:-.7px}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#8b5cf6,#5b36d6);color:#fff;display:grid;place-items:center;font-size:23px;font-weight:900;box-shadow:0 7px 18px #7048e833}.brand small{display:block;font-size:10px;letter-spacing:1.8px;color:var(--muted);font-weight:700;margin-top:-3px}.nav-menu{position:relative;margin-left:auto}.nav-menu-toggle{display:inline-flex;align-items:center;gap:7px;min-height:42px}.site-nav{position:absolute;z-index:20;right:0;top:calc(100% + 9px);display:grid;gap:5px;width:190px;padding:8px;border:1px solid var(--line);border-radius:15px;background:var(--panel);box-shadow:var(--shadow)}.site-nav[hidden]{display:none}.site-nav a{display:flex;align-items:center;min-height:42px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);font-size:14px;font-weight:750;transition:background .15s,color .15s}.site-nav a:hover{background:var(--soft);color:var(--accent)}.site-nav .nav-donate{background:linear-gradient(135deg,#8055f5,#6038d9);color:#fff;box-shadow:0 6px 16px #7048e82b}.site-nav .nav-donate:hover{background:linear-gradient(135deg,#7044e8,#512bc7);color:#fff}.top-actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:10px 14px;font-weight:700;transition:transform .15s,border-color .15s}.btn:hover{border-color:var(--accent);transform:translateY(-1px)}.btn.primary{background:linear-gradient(135deg,#8055f5,#6038d9);border:0;color:white;box-shadow:0 8px 18px #7048e82b}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.hero{padding:38px 0 27px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--panel);border-radius:99px;padding:6px 12px;color:var(--muted);font-size:12px;font-weight:750}.dot{width:7px;height:7px;border-radius:50%;background:#8b5cf6}.hero h1{font-size:clamp(34px,5vw,57px);line-height:1.08;letter-spacing:-2px;margin:17px 0 13px}.gradient{background:linear-gradient(100deg,#8b5cf6,#4f46e5);background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{max-width:600px;margin:auto;color:var(--muted);font-size:16px}.workspace{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:20px;align-items:start;padding-bottom:38px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:21px 22px 0}.panel-head h2{font-size:17px;margin:0 0 4px;letter-spacing:-.3px}.sub{font-size:13px;color:var(--muted);margin:0}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:5px;background:var(--bg);border:1px solid var(--line);border-radius:14px;margin:19px 22px 0}.tab{border:0;background:transparent;color:var(--muted);border-radius:10px;padding:10px 6px;font-weight:750;font-size:13px}.tab[aria-selected=true]{background:var(--panel);color:var(--accent);box-shadow:0 2px 8px #15152b0d}.panel-body{padding:20px 22px 23px}.field{display:block;margin-bottom:15px}.field>span,.label{display:block;font-weight:750;font-size:13px;margin-bottom:7px}.field input,.field textarea,.field select{display:block;width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:var(--bg);color:var(--text);min-width:0}.field textarea{resize:vertical;min-height:154px}.field input::placeholder,.field textarea::placeholder{color:var(--muted)}.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.checks{display:flex;gap:18px;flex-wrap:wrap;margin:2px 0 17px}.check{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}.check input{accent-color:var(--accent);width:16px;height:16px}.hint{font-size:12px;color:var(--muted);margin:-7px 0 15px}.full{width:100%;padding:13px 16px;font-size:15px}.result-panel{min-height:425px}.result-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.result-top .status{font-size:11px;font-weight:800;color:var(--good);background:color-mix(in srgb,var(--good) 10%,transparent);border-radius:99px;padding:5px 9px}.wheel-wrap{position:relative;width:min(100%,330px);aspect-ratio:1;margin:20px auto 4px;display:grid;place-items:center}.wheel-wrap canvas{display:block;width:100%;height:100%;filter:drop-shadow(0 12px 18px #21154720)}.wheel-pointer{position:absolute;z-index:2;top:-5px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:30px solid #f97316;filter:drop-shadow(0 3px 2px #0003)}.wheel-center{position:absolute;cursor:pointer;border:0;padding:0;transition:transform .15s,box-shadow .15s}.wheel-center:hover{transform:translate(-50%,-50%) scale(1.06);box-shadow:0 5px 18px #21154755}.wheel-center:disabled{cursor:wait;opacity:.8}.wheel-center{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);width:22%;aspect-ratio:1;border-radius:50%;border:5px solid #fff;background:linear-gradient(135deg,#8b5cf6,#4f46e5);box-shadow:0 3px 14px #21154735;display:grid;place-items:center;color:#fff;font-size:clamp(10px,2vw,15px);font-weight:900;letter-spacing:.5px}.wheel-hint{text-align:center;color:var(--muted);font-size:12px;margin:0 12px 16px}.wheel-spinning canvas{will-change:transform}.wheel-spinning{animation:wheel-glow .7s ease-in-out infinite alternate}@keyframes wheel-glow{from{filter:drop-shadow(0 8px 12px #8b5cf633)}to{filter:drop-shadow(0 14px 24px #8b5cf666)}}.result-stage{margin:18px 22px 0;min-height:208px;border:1px dashed color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:18px;background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 70%),var(--bg);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;gap:10px}.result-label{font-size:12px;color:var(--muted);font-weight:750;letter-spacing:1px;text-transform:uppercase}.result-value{font-size:clamp(35px,5vw,56px);font-weight:900;line-height:1.15;letter-spacing:-1.5px;overflow-wrap:anywhere}.result-value.empty{font-size:20px;letter-spacing:0;color:var(--muted);font-weight:650}.result-value.rolling{animation:pulse .12s infinite alternate}@keyframes pulse{from{opacity:.65;transform:scale(.985)}to{opacity:1;transform:scale(1.015)}}.result-meta{font-size:12px;color:var(--muted)}.result-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 22px 0}.history{padding:21px 22px 22px}.history-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.history-head h3{font-size:14px;margin:0}.history-list{display:grid;gap:8px;max-height:240px;overflow:auto}.history-item{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px}.history-item strong{font-size:13px;overflow-wrap:anywhere}.history-item small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.history-item button{border:0;background:transparent;color:var(--muted);padding:2px 5px}.empty-history{text-align:center;color:var(--muted);font-size:13px;padding:16px 0}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 0 34px}.feature{padding:18px;border:1px solid var(--line);background:var(--panel);border-radius:16px}.feature-icon{width:36px;height:36px;display:grid;place-items:center;background:var(--soft);color:var(--accent);border-radius:11px;font-size:18px;font-weight:850}.feature h3{font-size:14px;margin:12px 0 5px}.feature p{font-size:12px;color:var(--muted);margin:0}.foot{border-top:1px solid var(--line);padding:20px 0 27px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.foot a{color:var(--accent);text-decoration:none}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--text);color:var(--panel);border-radius:12px;padding:11px 16px;box-shadow:var(--shadow);transition:.2s;z-index:5;max-width:calc(100% - 32px);font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:background .2s,color .2s}button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #a78bfa;outline-offset:2px}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;font-size:21px;letter-spacing:-.7px}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#8b5cf6,#5b36d6);color:#fff;display:grid;place-items:center;font-size:23px;font-weight:900;box-shadow:0 7px 18px #7048e833}.brand small{display:block;font-size:10px;letter-spacing:1.8px;color:var(--muted);font-weight:700;margin-top:-3px}.nav-menu{position:relative;margin-left:auto}.nav-menu-toggle{display:inline-flex;align-items:center;gap:7px;min-height:42px}.site-nav{position:absolute;z-index:20;right:0;top:calc(100% + 9px);display:grid;gap:5px;width:190px;padding:8px;border:1px solid var(--line);border-radius:15px;background:var(--panel);box-shadow:var(--shadow)}.site-nav[hidden]{display:none}.site-nav a{display:flex;align-items:center;min-height:42px;padding:10px 12px;border-radius:10px;text-decoration:none;color:var(--text);font-size:14px;font-weight:750;transition:background .15s,color .15s}.site-nav a:hover{background:var(--soft);color:var(--accent)}.site-nav .nav-donate{background:linear-gradient(135deg,#8055f5,#6038d9);color:#fff;box-shadow:0 6px 16px #7048e82b}.site-nav .nav-donate:hover{background:linear-gradient(135deg,#7044e8,#512bc7);color:#fff}.top-actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;padding:10px 14px;font-weight:700;transition:transform .15s,border-color .15s}.btn:hover{border-color:var(--accent);transform:translateY(-1px)}.btn.primary{background:linear-gradient(135deg,#8055f5,#6038d9);border:0;color:white;box-shadow:0 8px 18px #7048e82b}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.hero{padding:38px 0 27px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--panel);border-radius:99px;padding:6px 12px;color:var(--muted);font-size:12px;font-weight:750}.dot{width:7px;height:7px;border-radius:50%;background:#8b5cf6}.hero h1{font-size:clamp(34px,5vw,57px);line-height:1.08;letter-spacing:-2px;margin:17px 0 13px}.gradient{background:linear-gradient(100deg,#8b5cf6,#4f46e5);background-clip:text;-webkit-background-clip:text;color:transparent}.hero p{max-width:600px;margin:auto;color:var(--muted);font-size:16px}.workspace{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:20px;align-items:start;padding-bottom:38px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:21px 22px 0}.panel-head h2{font-size:17px;margin:0 0 4px;letter-spacing:-.3px}.sub{font-size:13px;color:var(--muted);margin:0}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:5px;background:var(--bg);border:1px solid var(--line);border-radius:14px;margin:19px 22px 0}.tab{border:0;background:transparent;color:var(--muted);border-radius:10px;padding:10px 6px;font-weight:750;font-size:13px}.tab[aria-selected=true]{background:var(--panel);color:var(--accent);box-shadow:0 2px 8px #15152b0d}.panel-body{padding:20px 22px 23px}.field{display:block;margin-bottom:15px}.field>span,.label{display:block;font-weight:750;font-size:13px;margin-bottom:7px}.field input,.field textarea,.field select{display:block;width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:var(--bg);color:var(--text);min-width:0}.field textarea{resize:vertical;min-height:154px}.field input::placeholder,.field textarea::placeholder{color:var(--muted)}.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.checks{display:flex;gap:18px;flex-wrap:wrap;margin:2px 0 17px}.check{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}.check input{accent-color:var(--accent);width:16px;height:16px}.hint{font-size:12px;color:var(--muted);margin:-7px 0 15px}.full{width:100%;padding:13px 16px;font-size:15px}.result-panel{min-height:425px}.result-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.result-top .status{font-size:11px;font-weight:800;color:var(--good);background:color-mix(in srgb,var(--good) 10%,transparent);border-radius:99px;padding:5px 9px}.wheel-wrap{position:relative;width:100%;margin:20px auto 4px;display:flex;flex-direction:column;gap:12px}.wheel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:5px;max-height:340px;overflow:auto;padding:8px;border:1px solid var(--line);border-radius:16px;background:var(--bg);scroll-behavior:smooth;overscroll-behavior:contain}.wheel-cell{min-width:0;min-height:34px;display:grid;place-items:center;padding:4px 2px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);font-size:12px;font-weight:750;font-variant-numeric:tabular-nums;overflow:hidden}.wheel-cell.active{background:#f59e0b;border-color:#fbbf24;color:#231300;box-shadow:0 0 0 2px #fbbf2466;transform:scale(1.04)}.wheel-cell.winner{background:linear-gradient(135deg,#8b5cf6,#4f46e5);border-color:#8b5cf6;color:#fff;box-shadow:0 0 0 2px #8b5cf655}.wheel-center{align-self:center;cursor:pointer;border:0;padding:12px 32px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#4f46e5);color:#fff;font-weight:900;letter-spacing:1px;box-shadow:0 8px 18px #7048e833;transition:transform .15s,opacity .15s}.wheel-center:hover{transform:translateY(-1px)}.wheel-center:disabled{cursor:wait;opacity:.7}.wheel-spinning .wheel-grid{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}.wheel-hint{text-align:center;color:var(--muted);font-size:12px;margin:0 12px 16px}.wheel-spinning canvas{will-change:transform}.wheel-spinning{animation:wheel-glow .7s ease-in-out infinite alternate}@keyframes wheel-glow{from{filter:drop-shadow(0 8px 12px #8b5cf633)}to{filter:drop-shadow(0 14px 24px #8b5cf666)}}.result-stage{margin:18px 22px 0;min-height:208px;border:1px dashed color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:18px;background:radial-gradient(ellipse at 50% 0%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 70%),var(--bg);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;gap:10px}.result-label{font-size:12px;color:var(--muted);font-weight:750;letter-spacing:1px;text-transform:uppercase}.result-value{font-size:clamp(35px,5vw,56px);font-weight:900;line-height:1.15;letter-spacing:-1.5px;overflow-wrap:anywhere}.result-value.empty{font-size:20px;letter-spacing:0;color:var(--muted);font-weight:650}.result-value.rolling{animation:pulse .12s infinite alternate}@keyframes pulse{from{opacity:.65;transform:scale(.985)}to{opacity:1;transform:scale(1.015)}}.result-meta{font-size:12px;color:var(--muted)}.result-actions{display:flex;gap:8px;flex-wrap:wrap;margin:14px 22px 0}.history{padding:21px 22px 22px}.history-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.history-head h3{font-size:14px;margin:0}.history-list{display:grid;gap:8px;max-height:240px;overflow:auto}.history-item{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px}.history-item strong{font-size:13px;overflow-wrap:anywhere}.history-item small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.history-item button{border:0;background:transparent;color:var(--muted);padding:2px 5px}.empty-history{text-align:center;color:var(--muted);font-size:13px;padding:16px 0}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 0 34px}.feature{padding:18px;border:1px solid var(--line);background:var(--panel);border-radius:16px}.feature-icon{width:36px;height:36px;display:grid;place-items:center;background:var(--soft);color:var(--accent);border-radius:11px;font-size:18px;font-weight:850}.feature h3{font-size:14px;margin:12px 0 5px}.feature p{font-size:12px;color:var(--muted);margin:0}.foot{border-top:1px solid var(--line);padding:20px 0 27px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.foot a{color:var(--accent);text-decoration:none}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--text);color:var(--panel);border-radius:12px;padding:11px 16px;box-shadow:var(--shadow);transition:.2s;z-index:5;max-width:calc(100% - 32px);font-size:13px}.toast.show{opacity:1;transform:translate(-50%,0)}
 .result-modal{position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:20px;background:#080b18b8;backdrop-filter:blur(7px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,visibility .2s}
 .result-modal.open{opacity:1;visibility:visible;pointer-events:auto}
 .result-dialog{position:relative;width:min(520px,100%);max-height:min(82vh,720px);overflow:auto;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:24px;box-shadow:0 28px 90px #0005;padding:30px 24px 24px;text-align:center;transform:translateY(14px) scale(.98);transition:transform .22s}
@@ -96,7 +96,7 @@
 </div>
 <div class="panel result-panel">
 <div class="panel-head"><div class="result-top"><div><h2>Kết quả quay</h2><p class="sub">Kết quả được chọn bằng bộ sinh số ngẫu nhiên.</p></div><span class="status">● Sẵn sàng</span></div></div>
-<div class="wheel-wrap" id="wheelWrap" aria-label="Vòng quay ngẫu nhiên"><div class="wheel-pointer" aria-hidden="true"></div><canvas id="wheelCanvas" width="660" height="660" role="img" aria-label="Vòng quay các lựa chọn"></canvas><button class="wheel-center" id="drawBtn" type="button" aria-label="Bắt đầu quay">GO</button></div><p class="wheel-hint" id="wheelHint">Thiết lập danh sách rồi nhấn GO ở giữa vòng quay.</p><div class="result-stage" aria-live="polite" aria-atomic="true"><div class="result-label" id="resultLabel">KẾT QUẢ CỦA BẠN</div><div class="result-value empty" id="resultValue">Sẵn sàng khám phá?</div><div class="result-meta" id="resultMeta">Thiết lập lượt quay rồi nhấn GO ở giữa vòng quay.</div></div>
+<div class="wheel-wrap" id="wheelWrap" aria-label="Bảng quay số ngẫu nhiên"><div class="wheel-grid" id="wheelGrid" role="listbox" aria-label="Toàn bộ số hoặc lựa chọn"></div><button class="wheel-center" id="drawBtn" type="button" aria-label="Bắt đầu quay">QUAY NGAY</button></div><p class="wheel-hint" id="wheelHint">Thiết lập danh sách rồi nhấn GO ở giữa vòng quay.</p><div class="result-stage" aria-live="polite" aria-atomic="true"><div class="result-label" id="resultLabel">KẾT QUẢ CỦA BẠN</div><div class="result-value empty" id="resultValue">Sẵn sàng khám phá?</div><div class="result-meta" id="resultMeta">Thiết lập lượt quay rồi nhấn GO ở giữa vòng quay.</div></div>
 <div class="result-actions"><button class="btn" id="copyBtn" disabled>▢ Sao chép</button><button class="btn" id="csvBtn" disabled>↓ Xuất CSV</button><button class="btn" id="printBtn" disabled>In kết quả</button><button class="btn" id="clearBtn">Làm mới</button></div>
 <div class="history"><div class="history-head"><h3>Lịch sử gần đây <span id="historyCount" style="color:var(--muted);font-weight:500">(0)</span></h3><button class="btn" id="clearHistoryBtn" style="padding:6px 9px;font-size:11px">Xóa lịch sử</button></div><div class="history-list" id="historyList"><div class="empty-history">Kết quả của bạn sẽ xuất hiện ở đây.</div></div></div>
 </div>
@@ -128,7 +128,6 @@
   let history = [];
   let toastTimer;
 
-  let wheelAngle = 0;
   let wheelFrame = 0;
   let wheelBusy = false;
   let wheelEntriesOverride = null;
@@ -147,88 +146,67 @@
     return Array.from({length: 12}, (_, i) => unique[Math.floor(i * unique.length / 12)]);
   }
   function drawWheel() {
-    const canvas = $('wheelCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const size = canvas.width, center = size / 2, radius = size / 2 - 12;
+    const grid = $('wheelGrid');
+    if (!grid) return;
     const entries = wheelEntriesOverride || wheelEntries();
-    const colors = ['#7c3aed','#2563eb','#0891b2','#059669','#ca8a04','#ea580c','#db2777','#4f46e5','#0d9488','#9333ea','#475569','#e11d48'];
-    ctx.clearRect(0, 0, size, size);
-    ctx.save();
-    ctx.translate(center, center);
-    ctx.rotate(wheelAngle);
-    const arc = Math.PI * 2 / entries.length;
+    const fragment = document.createDocumentFragment();
     entries.forEach((entry, i) => {
-      const start = -Math.PI / 2 + i * arc;
-      ctx.beginPath();
-      ctx.moveTo(0, 0);
-      ctx.arc(0, 0, radius, start, start + arc);
-      ctx.closePath();
-      ctx.fillStyle = colors[i % colors.length];
-      ctx.fill();
-      ctx.strokeStyle = i === wheelWinnerIndex ? '#fde047' : '#ffffffd9';
-      ctx.lineWidth = i === wheelWinnerIndex ? 10 : 4;
-      ctx.stroke();
-      ctx.save();
-      ctx.rotate(start + arc / 2);
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'middle';
-      ctx.fillStyle = '#fff';
-      ctx.shadowColor = '#0006';
-      ctx.shadowBlur = 3;
-      const label = String(entry);
-      const maxChars = entries.length > 8 ? 12 : 18;
-      ctx.font = '700 ' + (entries.length > 8 ? '20px' : '24px') + ' system-ui, sans-serif';
-      let shown = label.length > maxChars ? label.slice(0, maxChars - 1) + '…' : label;
-      ctx.fillText(shown, radius - 24, 0, radius * 0.62);
-      ctx.restore();
+      const cell = document.createElement('div');
+      cell.className = 'wheel-cell' + (i === wheelWinnerIndex ? ' winner' : '');
+      cell.textContent = String(entry);
+      cell.setAttribute('role', 'option');
+      cell.setAttribute('aria-selected', String(i === wheelWinnerIndex));
+      cell.dataset.index = String(i);
+      fragment.append(cell);
     });
-    ctx.restore();
-    ctx.beginPath();
-    ctx.arc(center, center, radius + 1, 0, Math.PI * 2);
-    ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 10;
-    ctx.stroke();
+    grid.replaceChildren(fragment);
   }
   function spinWheel(winner) {
     return new Promise(resolve => {
       const wrap = $('wheelWrap');
+      const grid = $('wheelGrid');
       const entries = wheelEntries();
-      // Pick a display sector with the same cryptographically secure RNG used
-      // for drawing, then put the already-selected winner in that exact sector.
       const targetIndex = randBelow(entries.length);
       entries[targetIndex] = String(winner);
       wheelEntriesOverride = entries;
       wheelWinnerIndex = targetIndex;
       drawWheel();
-      const startAngle = wheelAngle;
-      const arc = Math.PI * 2 / entries.length;
-      // Canvas sector centers are measured from the top; rotate the selected
-      // winner's sector center exactly beneath the fixed pointer at 12 o'clock.
-      const targetOrientation = ((-(targetIndex + 0.5) * arc) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
-      const alignment = ((targetOrientation - startAngle) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
-      const extra = Math.PI * 2 * 6 + alignment;
+      const cells = grid.querySelectorAll('.wheel-cell');
       const duration = 4200;
       const started = performance.now();
+      let lastIndex = -1;
       wheelBusy = true;
       wrap.classList.add('wheel-spinning');
       $('drawBtn').disabled = true;
       document.querySelectorAll('.panel-body input, .panel-body textarea, .tabs button').forEach(el => { el.disabled = true; });
-      $('wheelHint').textContent = 'Đang quay…';
+      $('wheelHint').textContent = 'Đang quay qua các ô số…';
       const animate = now => {
         const progress = Math.min(1, (now - started) / duration);
-        const eased = 1 - Math.pow(1 - progress, 4);
-        wheelAngle = startAngle + extra * eased;
-        drawWheel();
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const cycle = Math.floor(eased * 45);
+        const index = progress >= 1 ? targetIndex : (Math.floor(now / Math.max(45, 180 - cycle * 3)) % cells.length);
+        if (index !== lastIndex) {
+          if (lastIndex >= 0 && cells[lastIndex]) cells[lastIndex].classList.remove('active');
+          if (cells[index]) {
+            cells[index].classList.add('active');
+            if (progress < 1) cells[index].scrollIntoView({block:'nearest',inline:'nearest',behavior:'auto'});
+          }
+          lastIndex = index;
+        }
         if (progress < 1) {
           wheelFrame = requestAnimationFrame(animate);
         } else {
+          cells.forEach(cell => cell.classList.remove('active'));
+          if (cells[targetIndex]) {
+            cells[targetIndex].classList.add('winner');
+            cells[targetIndex].scrollIntoView({block:'center',inline:'nearest',behavior:'smooth'});
+          }
           wrap.classList.remove('wheel-spinning');
           wheelBusy = false;
           document.querySelectorAll('.panel-body input, .panel-body textarea, .tabs button').forEach(el => { el.disabled = false; });
           setMode(mode);
           $('drawBtn').disabled = false;
-          $('wheelHint').textContent = 'Kim chỉ đúng vào kết quả đầu tiên bên dưới.';
+          $('wheelHint').textContent = 'Ô được tô sáng là kết quả vừa quay.';
           resolve();
         }
       };
