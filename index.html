@@ -29,7 +29,6 @@
 .guide-section{padding:8px 0 38px;scroll-margin-top:22px}.guide-heading{text-align:center;margin:0 auto 20px;max-width:680px}.guide-heading h2{font-size:clamp(25px,4vw,36px);letter-spacing:-1px;line-height:1.15;margin:14px 0 8px}.guide-heading>p{color:var(--muted);margin:0}.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.guide-card{position:relative;padding:21px;border:1px solid var(--line);border-radius:17px;background:var(--panel);box-shadow:var(--shadow)}.guide-number{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--soft);color:var(--accent);font-size:12px;font-weight:900}.guide-card h3{font-size:16px;margin:12px 0 8px}.guide-card p{font-size:13px;color:var(--muted);margin:7px 0 0}.guide-card strong{color:var(--text)}html{scroll-behavior:smooth}
 @media(max-width:760px){.guide-grid{grid-template-columns:1fr}.guide-card{padding:18px}}
 
-.range-preview{margin:-3px 0 16px;border:1px solid var(--line);border-radius:12px;background:var(--bg);overflow:hidden}.range-preview summary{cursor:pointer;padding:10px 12px;color:var(--accent);font-size:12px;font-weight:750}.range-preview-values{max-height:180px;overflow:auto;padding:0 12px 12px;color:var(--muted);font-size:12px;line-height:1.8;overflow-wrap:anywhere;word-break:break-word}
 /* Responsive header refinement */
 .topbar{height:auto;min-height:72px;padding:10px 0;gap:12px}
 .brand{min-width:0;flex-shrink:1;gap:9px}
@@ -82,7 +81,7 @@
 </div>
 <div class="panel-body">
 <div id="rangeFields">
-<div class="row2"><label class="field"><span>Số nhỏ nhất</span><input id="minNum" type="number" value="1" min="1" max="9999" step="1" inputmode="numeric" aria-describedby="rangeHint"></label><label class="field"><span>Số lớn nhất</span><input id="maxNum" type="number" value="100" min="1" max="9999" step="1" inputmode="numeric" aria-describedby="rangeHint"></label></div><p class="hint" id="rangeHint">Nhập số nguyên từ 1 đến 9999. Có thể xem toàn bộ dãy số bên dưới.</p><details class="range-preview"><summary id="rangePreviewSummary">Xem đầy đủ dãy số (1–100)</summary><div id="rangePreviewValues" class="range-preview-values" aria-live="polite"></div></details>
+<div class="row2"><label class="field"><span>Số nhỏ nhất</span><input id="minNum" type="number" value="1" min="1" max="9999" step="1" inputmode="numeric" aria-describedby="rangeHint"></label><label class="field"><span>Số lớn nhất</span><input id="maxNum" type="number" value="100" min="1" max="9999" step="1" inputmode="numeric" aria-describedby="rangeHint"></label></div><p class="hint" id="rangeHint">Nhập số nguyên từ 1 đến 9999. Vòng quay hiển thị toàn bộ số trong khoảng đã chọn.</p>
 
 </div>
 <div id="listFields" hidden>
@@ -139,27 +138,13 @@
       const min = Number($('minNum').value), max = Number($('maxNum').value);
       if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 1 || max > 9999 || min > max) return Array.from({length: 8}, (_, i) => String(i + 1));
       const span = max - min + 1;
-      const count = Math.min(12, span);
-      return Array.from({length: count}, (_, i) => String(min + Math.floor(i * span / count)));
+      return Array.from({length: span}, (_, i) => String(min + i));
     }
     const entries = $('sourceList').value.split(/\r?\n/).map(x => x.trim()).filter(Boolean);
     const unique = $('uniqueNames').checked ? [...new Set(entries)] : entries;
     if (!unique.length) return ['Tên 1','Tên 2','Tên 3','Tên 4','Tên 5','Tên 6'];
     if (unique.length <= 12) return unique;
     return Array.from({length: 12}, (_, i) => unique[Math.floor(i * unique.length / 12)]);
-  }
-  function renderRangePreview() {
-    const min = Number($('minNum').value), max = Number($('maxNum').value);
-    const summary = $('rangePreviewSummary'), values = $('rangePreviewValues');
-    if (!summary || !values) return;
-    const valid = Number.isSafeInteger(min) && Number.isSafeInteger(max) && min >= 1 && max <= 9999 && min <= max;
-    if (!valid) {
-      summary.textContent = 'Dãy số chưa hợp lệ';
-      values.textContent = 'Nhập số nhỏ nhất và số lớn nhất hợp lệ (1–9999).';
-      return;
-    }
-    summary.textContent = 'Xem đầy đủ dãy số (' + min + '–' + max + ') · ' + (max - min + 1) + ' số';
-    values.textContent = Array.from({length: max - min + 1}, (_, i) => String(min + i)).join(', ');
   }
   function drawWheel() {
     const canvas = $('wheelCanvas');
@@ -436,7 +421,7 @@
     URL.revokeObjectURL(url);
   }
   document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; setMode(button.dataset.mode); drawWheel(); }));
-  ['minNum','maxNum','sourceList','uniqueNames'].forEach(id => $(id)?.addEventListener('input', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); if (id === 'minNum' || id === 'maxNum') renderRangePreview(); }));
+  ['minNum','maxNum','sourceList','uniqueNames'].forEach(id => $(id)?.addEventListener('input', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); }));
   $('uniqueNames').addEventListener('change', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); });
   $('weighted').addEventListener('change', () => { $('weightField').hidden = !$('weighted').checked || mode === 'range'; });
   $('drawBtn').addEventListener('click', draw);
