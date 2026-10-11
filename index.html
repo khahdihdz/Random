@@ -26,13 +26,15 @@
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}footer{margin-top:4px}
 @media(max-width:760px){.topbar{height:auto;min-height:66px;flex-wrap:wrap;padding:10px 0;row-gap:9px}.site-nav{order:3;width:100%;margin:0;justify-content:center}.site-nav a{flex:1}.top-actions{margin-left:auto}.workspace{grid-template-columns:1fr}.hero{padding-top:25px}.hero h1{letter-spacing:-1.2px}.result-panel{min-height:0}.result-stage{min-height:185px}.features{grid-template-columns:1fr}.topbar{height:66px}.brand{font-size:19px}.panel-head{padding:19px 17px 0}.tabs{margin:17px 17px 0}.panel-body,.history{padding:18px 17px}.result-stage{margin-left:17px;margin-right:17px}.result-actions{margin-left:17px;margin-right:17px}.row2{gap:9px}}@media(max-width:390px){.wrap{width:calc(100% - 22px)}.top-actions .btn{padding:9px 10px}.hero p{font-size:14px}.tab{font-size:12px}.row2{grid-template-columns:1fr}.result-value{font-size:36px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+.guide-section{padding:8px 0 38px;scroll-margin-top:22px}.guide-heading{text-align:center;margin:0 auto 20px;max-width:680px}.guide-heading h2{font-size:clamp(25px,4vw,36px);letter-spacing:-1px;line-height:1.15;margin:14px 0 8px}.guide-heading>p{color:var(--muted);margin:0}.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.guide-card{position:relative;padding:21px;border:1px solid var(--line);border-radius:17px;background:var(--panel);box-shadow:var(--shadow)}.guide-number{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:11px;background:var(--soft);color:var(--accent);font-size:12px;font-weight:900}.guide-card h3{font-size:16px;margin:12px 0 8px}.guide-card p{font-size:13px;color:var(--muted);margin:7px 0 0}.guide-card strong{color:var(--text)}html{scroll-behavior:smooth}
+@media(max-width:760px){.guide-grid{grid-template-columns:1fr}.guide-card{padding:18px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="topbar">
 <a class="brand" href="./" style="text-decoration:none;color:inherit"><span class="logo">X</span><span>Random<small>LUCKY WHEEL</small></span></a>
-<nav class="site-nav" aria-label="Điều hướng chính"><a href="https://khahdihdz.github.io/" target="_blank" rel="noopener noreferrer">Hướng dẫn</a><a class="nav-donate" href="https://khahdihdz.github.io/" target="_blank" rel="noopener noreferrer">♥ Donate</a></nav>
+<nav class="site-nav" aria-label="Điều hướng chính"><a href="#huong-dan">Hướng dẫn</a><a class="nav-donate" href="https://khahdihdz.github.io/" target="_blank" rel="noopener noreferrer">♥ Donate</a></nav>
 <div class="top-actions"><button class="btn" id="themeBtn" aria-label="Chuyển giao diện">☾ Giao diện</button><a class="btn" href="https://github.com/khahdihdz/Random" target="_blank" rel="noopener noreferrer" style="text-decoration:none">GitHub ↗</a></div>
 </header>
 <main>
@@ -71,6 +73,17 @@
 <article class="feature"><div class="feature-icon">↧</div><h3>Xuất kết quả dễ dàng</h3><p>Sao chép, tải CSV hoặc in danh sách kết quả bất cứ lúc nào.</p></article>
 </section>
 </main>
+<section class="guide-section" id="huong-dan" aria-labelledby="guideTitle">
+<div class="guide-heading"><span class="eyebrow"><span class="dot"></span> HƯỚNG DẪN SỬ DỤNG</span><h2 id="guideTitle">Bắt đầu chỉ với vài bước</h2><p>Chọn cách quay phù hợp, nhập dữ liệu và xem kết quả ngay trên vòng quay.</p></div>
+<div class="guide-grid">
+<article class="guide-card"><span class="guide-number">01</span><h3>Chọn chế độ quay</h3><p><strong>Quay số:</strong> nhập số bắt đầu và số kết thúc để chọn số ngẫu nhiên trong khoảng.</p><p><strong>Quay tên:</strong> dán danh sách tên, mỗi tên một dòng.</p><p><strong>Danh sách:</strong> dán các mục bất kỳ như phần thưởng, câu hỏi hoặc nhiệm vụ; mỗi mục một dòng.</p></article>
+<article class="guide-card"><span class="guide-number">02</span><h3>Thiết lập lượt quay</h3><p>Nhập số kết quả cần chọn và ghi chú nếu cần, ví dụ “Giải nhất”.</p><p>Bật <strong>Không chọn trùng</strong> để không lấy lại một kết quả trong cùng lượt. Bật <strong>Loại tên trùng</strong> để gộp các dòng giống nhau.</p></article>
+<article class="guide-card"><span class="guide-number">03</span><h3>Quay và xem kết quả</h3><p>Nhấn nút <strong>GO</strong> ở giữa vòng quay. Khi vòng quay dừng, kết quả sẽ hiện trên màn hình và trong cửa sổ thông báo.</p><p>Ở cửa sổ kết quả, nhấn <strong>Sao chép kết quả</strong> để sao chép nhanh hoặc <strong>Đóng</strong> để quay lại.</p></article>
+<article class="guide-card"><span class="guide-number">04</span><h3>Dùng trọng số (tùy chọn)</h3><p>Trong chế độ Quay tên hoặc Danh sách, bật <strong>Quay theo trọng số</strong>, rồi nhập một trọng số cho mỗi dòng theo đúng thứ tự danh sách.</p><p>Trọng số lớn hơn làm mục đó có cơ hội được chọn cao hơn. Dùng số không âm; cần ít nhất một trọng số lớn hơn 0.</p></article>
+<article class="guide-card"><span class="guide-number">05</span><h3>Lưu và xuất kết quả</h3><p><strong>Sao chép</strong> để lấy kết quả dạng văn bản, <strong>Xuất CSV</strong> để mở bằng Excel/Google Sheets, hoặc <strong>In kết quả</strong> để in/lưu PDF.</p><p>Lịch sử gần đây tự lưu trên trình duyệt của thiết bị. Chọn <strong>Xóa lịch sử</strong> để xóa các lượt đã lưu.</p></article>
+<article class="guide-card"><span class="guide-number">06</span><h3>Quyền riêng tư và lưu ý</h3><p>Danh sách và lịch sử được lưu cục bộ trong trình duyệt; website không tự gửi dữ liệu lên máy chủ. Dữ liệu cục bộ có thể mất nếu bạn xóa dữ liệu trình duyệt hoặc đổi thiết bị.</p><p>Vòng quay là phần hiển thị trực quan; kết quả được chọn bằng bộ sinh số ngẫu nhiên của trình duyệt. Hãy kiểm tra danh sách và trọng số trước khi quay.</p></article>
+</div>
+</section>
 <footer class="foot"><span>© <span id="year"></span> Random · Công cụ miễn phí cho mọi lựa chọn.</span><span>Dữ liệu lưu cục bộ · <a href="https://github.com/khahdihdz/Random" target="_blank" rel="noopener noreferrer">Mã nguồn mở trên GitHub</a></span></footer>
 </div><div class="toast" id="toast" role="status"></div>
 <div class="result-modal" id="resultModal" aria-hidden="true">
