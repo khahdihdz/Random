@@ -28,7 +28,7 @@ jobs:
         run: |
           set -e
           test -s index.html
-          grep -q 'id="wheelCanvas"' index.html
+          grep -q 'id="wheelGrid"' index.html
           grep -q 'await spinWheel(results\[0\])' index.html
           grep -q 'crypto.getRandomValues' index.html
           python3 - <<'PY'
@@ -36,12 +36,12 @@ jobs:
           import re
           html = Path("index.html").read_text(encoding="utf-8")
           assert "<html" in html.lower() and "</html>" in html.lower()
-          assert 'id="wheelCanvas"' in html
+          assert 'id="wheelGrid"' in html
           assert "wheelEntriesOverride" in html
           scripts = re.findall(r"<script(?:\s[^>]*)?>(.*?)</script>", html, re.I | re.S)
           inline = [s for s in scripts if s.strip()]
           assert inline, "Inline JavaScript block not found"
-          Path("/tmp/random-inline.js").write_text(inline[-1], encoding="utf-8")
+          Path("/tmp/random-inline.js").write_text(inline[0], encoding="utf-8")
           print("HTML and wheel synchronization checks passed")
           PY
           node --check /tmp/random-inline.js
