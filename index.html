@@ -74,6 +74,7 @@
   let wheelFrame = 0;
   let wheelBusy = false;
   let wheelEntriesOverride = null;
+  let wheelWinnerIndex = -1;
   function wheelEntries() {
     if (mode === 'range') {
       const min = Number($('minNum').value), max = Number($('maxNum').value);
@@ -108,8 +109,8 @@
       ctx.closePath();
       ctx.fillStyle = colors[i % colors.length];
       ctx.fill();
-      ctx.strokeStyle = '#ffffffd9';
-      ctx.lineWidth = 4;
+      ctx.strokeStyle = i === wheelWinnerIndex ? '#fde047' : '#ffffffd9';
+      ctx.lineWidth = i === wheelWinnerIndex ? 10 : 4;
       ctx.stroke();
       ctx.save();
       ctx.rotate(start + arc / 2);
@@ -136,9 +137,12 @@
     return new Promise(resolve => {
       const wrap = $('wheelWrap');
       const entries = wheelEntries();
-      const targetIndex = Math.floor(Math.random() * entries.length);
+      // Pick a display sector with the same cryptographically secure RNG used
+      // for drawing, then put the already-selected winner in that exact sector.
+      const targetIndex = randBelow(entries.length);
       entries[targetIndex] = String(winner);
       wheelEntriesOverride = entries;
+      wheelWinnerIndex = targetIndex;
       drawWheel();
       const startAngle = wheelAngle;
       const arc = Math.PI * 2 / entries.length;
@@ -338,9 +342,9 @@
     a.href = url; a.download = 'random-ket-qua.csv'; a.click();
     URL.revokeObjectURL(url);
   }
-  document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => { wheelEntriesOverride = null; setMode(button.dataset.mode); drawWheel(); }));
-  ['minNum','maxNum','sourceList','uniqueNames'].forEach(id => $(id)?.addEventListener('input', () => { wheelEntriesOverride = null; drawWheel(); }));
-  $('uniqueNames').addEventListener('change', () => { wheelEntriesOverride = null; drawWheel(); });
+  document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; setMode(button.dataset.mode); drawWheel(); }));
+  ['minNum','maxNum','sourceList','uniqueNames'].forEach(id => $(id)?.addEventListener('input', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); }));
+  $('uniqueNames').addEventListener('change', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); });
   $('weighted').addEventListener('change', () => { $('weightField').hidden = !$('weighted').checked || mode === 'range'; });
   $('drawBtn').addEventListener('click', draw);
   $('copyBtn').addEventListener('click', async () => {
@@ -352,7 +356,7 @@
   $('csvBtn').addEventListener('click', downloadCsv);
   $('printBtn').addEventListener('click', () => window.print());
   $('clearBtn').addEventListener('click', () => {
-    lastResults = []; lastLabel = ''; wheelEntriesOverride = null; drawWheel();
+    lastResults = []; lastLabel = ''; wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel();
     $('resultLabel').textContent = 'KẾT QUẢ CỦA BẠN';
     $('resultValue').textContent = 'Sẵn sàng khám phá?';
     $('resultValue').classList.add('empty');
