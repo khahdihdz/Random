@@ -96,7 +96,7 @@
 </div>
 <div class="panel result-panel">
 <div class="panel-head"><div class="result-top"><div><h2>Kết quả quay</h2><p class="sub">Kết quả được chọn bằng bộ sinh số ngẫu nhiên.</p></div><span class="status">● Sẵn sàng</span></div></div>
-<div class="wheel-wrap" id="wheelWrap" aria-label="Bảng quay số ngẫu nhiên"><div class="wheel-grid" id="wheelGrid" role="listbox" aria-label="Toàn bộ số hoặc lựa chọn"></div><button class="wheel-center" id="drawBtn" type="button" aria-label="Bắt đầu quay">QUAY NGAY</button></div><p class="wheel-hint" id="wheelHint">Thiết lập danh sách rồi nhấn GO ở giữa vòng quay.</p><div class="result-stage" aria-live="polite" aria-atomic="true"><div class="result-label" id="resultLabel">KẾT QUẢ CỦA BẠN</div><div class="result-value empty" id="resultValue">Sẵn sàng khám phá?</div><div class="result-meta" id="resultMeta">Thiết lập lượt quay rồi nhấn GO ở giữa vòng quay.</div></div>
+<div class="wheel-wrap" id="wheelWrap" aria-label="Bảng quay số ngẫu nhiên"><div class="wheel-grid" id="wheelGrid" role="listbox" aria-label="Toàn bộ số hoặc lựa chọn"></div><button class="wheel-center" id="drawBtn" type="button" aria-label="Bắt đầu quay">QUAY NGAY</button></div><p class="wheel-hint" id="wheelHint">Dãy số được hiển thị theo khoảng đã cài đặt. Nhấn QUAY NGAY để chọn kết quả.</p><div class="result-stage" aria-live="polite" aria-atomic="true"><div class="result-label" id="resultLabel">KẾT QUẢ CỦA BẠN</div><div class="result-value empty" id="resultValue">Sẵn sàng khám phá?</div><div class="result-meta" id="resultMeta">Thiết lập lượt quay rồi nhấn QUAY NGAY.</div></div>
 <div class="result-actions"><button class="btn" id="copyBtn" disabled>▢ Sao chép</button><button class="btn" id="csvBtn" disabled>↓ Xuất CSV</button><button class="btn" id="printBtn" disabled>In kết quả</button><button class="btn" id="clearBtn">Làm mới</button></div>
 <div class="history"><div class="history-head"><h3>Lịch sử gần đây <span id="historyCount" style="color:var(--muted);font-weight:500">(0)</span></h3><button class="btn" id="clearHistoryBtn" style="padding:6px 9px;font-size:11px">Xóa lịch sử</button></div><div class="history-list" id="historyList"><div class="empty-history">Kết quả của bạn sẽ xuất hiện ở đây.</div></div></div>
 </div>
@@ -132,12 +132,17 @@
   let wheelBusy = false;
   let wheelEntriesOverride = null;
   let wheelWinnerIndex = -1;
+  function formatRangeNumber(value) {
+    const max = Number($('maxNum').value);
+    const width = Number.isSafeInteger(max) && max >= 1 && max <= 9999 ? String(max).length : 1;
+    return String(value).padStart(width, '0');
+  }
   function wheelEntries() {
     if (mode === 'range') {
       const min = Number($('minNum').value), max = Number($('maxNum').value);
       if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 1 || max > 9999 || min > max) return Array.from({length: 8}, (_, i) => String(i + 1));
       const span = max - min + 1;
-      return Array.from({length: span}, (_, i) => String(min + i));
+      return Array.from({length: span}, (_, i) => formatRangeNumber(min + i));
     }
     const entries = $('sourceList').value.split(/\r?\n/).map(x => x.trim()).filter(Boolean);
     const unique = $('uniqueNames').checked ? [...new Set(entries)] : entries;
@@ -302,8 +307,8 @@
       const span = max - min + 1;
       if (!Number.isSafeInteger(span) || span < 1 || span > 4294967296) throw new Error('Khoảng số phải có tối đa 4.294.967.296 giá trị.');
       if (noRepeat && count > span) throw new Error('Số kết quả lớn hơn số lượng số trong khoảng.');
-      if (noRepeat) { const picked = new Set(); while (picked.size < count) picked.add(String(min + randBelow(span))); return [...picked]; }
-      return Array.from({length: count}, () => String(min + randBelow(span)));
+      if (noRepeat) { const picked = new Set(); while (picked.size < count) picked.add(formatRangeNumber(min + randBelow(span))); return [...picked]; }
+      return Array.from({length: count}, () => formatRangeNumber(min + randBelow(span)));
     }
     const items = getItems();
     if (noRepeat && count > items.length) throw new Error('Số kết quả lớn hơn số phần tử duy nhất trong danh sách.');
@@ -432,7 +437,7 @@
     $('resultLabel').textContent = 'KẾT QUẢ CỦA BẠN';
     $('resultValue').textContent = 'Sẵn sàng khám phá?';
     $('resultValue').classList.add('empty');
-    $('resultMeta').textContent = 'Thiết lập lượt quay rồi nhấn bắt đầu.';
+    $('resultMeta').textContent = 'Thiết lập lượt quay rồi nhấn QUAY NGAY.';
     $('copyBtn').disabled = $('csvBtn').disabled = $('printBtn').disabled = true;
   });
   $('clearHistoryBtn').addEventListener('click', () => {
