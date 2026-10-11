@@ -81,7 +81,7 @@
 </div>
 <div class="panel-body">
 <div id="rangeFields">
-<div class="row2"><label class="field"><span>Số nhỏ nhất</span><input id="minNum" type="number" value="1" min="0" max="9999" step="1" inputmode="numeric" aria-describedby="rangeHint"></label><label class="field"><span>Số lớn nhất</span><input id="maxNum" type="number" value="100" min="0" max="9999" step="1" inputmode="numeric" aria-describedby="rangeHint"></label><p class="hint" id="rangeHint">Nhập số nguyên từ 0 đến 9999 (tối đa 4 chữ số).</p></div>
+<div class="row2"><label class="field"><span>Số lớn nhất</span><input id="maxNum" type="number" value="100" min="1" max="9999" step="1" inputmode="numeric" aria-describedby="rangeHint"></label><p class="hint" id="rangeHint">Quay từ số 1 đến số lớn nhất bạn chọn (1–9999, tối đa 4 chữ số).</p></div>
 
 </div>
 <div id="listFields" hidden>
@@ -135,8 +135,8 @@
   let wheelWinnerIndex = -1;
   function wheelEntries() {
     if (mode === 'range') {
-      const min = Number($('minNum').value), max = Number($('maxNum').value);
-      if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 0 || max > 9999 || min > max) return Array.from({length: 8}, (_, i) => String(i + 1));
+      const min = 1, max = Number($('maxNum').value);
+      if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 1 || max < 1 || max > 9999 || min > max) return Array.from({length: 8}, (_, i) => String(i + 1));
       const span = max - min + 1;
       const count = Math.min(12, span);
       return Array.from({length: count}, (_, i) => String(min + Math.floor(i * span / count)));
@@ -314,8 +314,8 @@
     const noRepeat = $('noRepeat').checked;
     if (!Number.isSafeInteger(count) || count < 1 || count > 100) throw new Error('Số kết quả phải từ 1 đến 100.');
     if (mode === 'range') {
-      const min = Number($('minNum').value), max = Number($('maxNum').value);
-      if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 0 || max > 9999 || min > max) throw new Error('Vui lòng nhập số nguyên hợp lệ từ 0 đến 9999, trong đó số nhỏ nhất không lớn hơn số lớn nhất.');
+      const min = 1, max = Number($('maxNum').value);
+      if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 0 || max > 9999 || min > max) throw new Error('Vui lòng nhập số nguyên lớn nhất từ 1 đến 9999.');
       const span = max - min + 1;
       if (!Number.isSafeInteger(span) || span < 1 || span > 4294967296) throw new Error('Khoảng số phải có tối đa 4.294.967.296 giá trị.');
       if (noRepeat && count > span) throw new Error('Số kết quả lớn hơn số lượng số trong khoảng.');
@@ -422,7 +422,7 @@
     URL.revokeObjectURL(url);
   }
   document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; setMode(button.dataset.mode); drawWheel(); }));
-  ['minNum','maxNum','sourceList','uniqueNames'].forEach(id => $(id)?.addEventListener('input', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); }));
+  ['maxNum','sourceList','uniqueNames'].forEach(id => $(id)?.addEventListener('input', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); }));
   $('uniqueNames').addEventListener('change', () => { wheelEntriesOverride = null; wheelWinnerIndex = -1; drawWheel(); });
   $('weighted').addEventListener('change', () => { $('weightField').hidden = !$('weighted').checked || mode === 'range'; });
   $('drawBtn').addEventListener('click', draw);
