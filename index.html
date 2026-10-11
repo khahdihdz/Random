@@ -68,7 +68,7 @@
 <div class="wrap">
 <header class="topbar">
 <a class="brand" href="./" style="text-decoration:none;color:inherit"><span class="logo">X</span><span>Random<small>LUCKY WHEEL</small></span></a>
-<div class="nav-menu"><button class="btn nav-menu-toggle" id="navMenuToggle" type="button" aria-expanded="false" aria-controls="siteNav">☰ Menu</button><nav class="site-nav" id="siteNav" aria-label="Điều hướng chính" hidden><a href="#huong-dan">Hướng dẫn</a><a class="nav-donate" href="https://khahdihdz.github.io/" target="_blank" rel="noopener noreferrer">♥ Donate</a></nav></div>
+<div class="nav-menu"><button class="btn nav-menu-toggle" id="navMenuToggle" type="button" aria-expanded="false" aria-controls="siteNav">☰ Menu</button><nav class="site-nav" id="siteNav" aria-label="Điều hướng chính" hidden><a href="./">Vòng quay</a><a href="huong-dan.html">Hướng dẫn</a><a href="tinh-nang.html">Tính năng</a><a class="nav-donate" href="https://khahdihdz.github.io/" target="_blank" rel="noopener noreferrer">♥ Donate</a></nav></div>
 <div class="top-actions"><button class="btn" id="themeBtn" aria-label="Chuyển giao diện">☾ Giao diện</button><a class="btn" href="https://github.com/khahdihdz/Random" target="_blank" rel="noopener noreferrer" style="text-decoration:none">GitHub ↗</a></div>
 </header>
 <main>
@@ -101,23 +101,7 @@
 <div class="history"><div class="history-head"><h3>Lịch sử gần đây <span id="historyCount" style="color:var(--muted);font-weight:500">(0)</span></h3><button class="btn" id="clearHistoryBtn" style="padding:6px 9px;font-size:11px">Xóa lịch sử</button></div><div class="history-list" id="historyList"><div class="empty-history">Kết quả của bạn sẽ xuất hiện ở đây.</div></div></div>
 </div>
 </section>
-<section class="features" aria-label="Ưu điểm">
-<article class="feature"><div class="feature-icon">↗</div><h3>Ngẫu nhiên thực sự</h3><p>Sử dụng crypto.getRandomValues() cùng thuật toán loại bỏ sai lệch modulo.</p></article>
-<article class="feature"><div class="feature-icon">⌁</div><h3>Lưu trên thiết bị</h3><p>Danh sách và lịch sử được giữ trong trình duyệt, không tự gửi lên máy chủ.</p></article>
-<article class="feature"><div class="feature-icon">↧</div><h3>Xuất kết quả dễ dàng</h3><p>Sao chép, tải CSV hoặc in danh sách kết quả bất cứ lúc nào.</p></article>
-</section>
 </main>
-<section class="guide-section" id="huong-dan" aria-labelledby="guideTitle">
-<div class="guide-heading"><span class="eyebrow"><span class="dot"></span> HƯỚNG DẪN SỬ DỤNG</span><h2 id="guideTitle">Bắt đầu chỉ với vài bước</h2><p>Chọn cách quay phù hợp, nhập dữ liệu và xem kết quả ngay trên vòng quay.</p></div>
-<div class="guide-grid">
-<article class="guide-card"><span class="guide-number">01</span><h3>Chọn chế độ quay</h3><p><strong>Quay số:</strong> nhập số bắt đầu và số kết thúc để chọn số ngẫu nhiên trong khoảng.</p><p><strong>Quay tên:</strong> dán danh sách tên, mỗi tên một dòng.</p><p><strong>Danh sách:</strong> dán các mục bất kỳ như phần thưởng, câu hỏi hoặc nhiệm vụ; mỗi mục một dòng.</p></article>
-<article class="guide-card"><span class="guide-number">02</span><h3>Thiết lập lượt quay</h3><p>Nhập số kết quả cần chọn và ghi chú nếu cần, ví dụ “Giải nhất”.</p><p>Bật <strong>Không chọn trùng</strong> để không lấy lại một kết quả trong cùng lượt. Bật <strong>Loại tên trùng</strong> để gộp các dòng giống nhau.</p></article>
-<article class="guide-card"><span class="guide-number">03</span><h3>Quay và xem kết quả</h3><p>Nhấn nút <strong>GO</strong> ở giữa vòng quay. Khi vòng quay dừng, kết quả sẽ hiện trên màn hình và trong cửa sổ thông báo.</p><p>Ở cửa sổ kết quả, nhấn <strong>Sao chép kết quả</strong> để sao chép nhanh hoặc <strong>Đóng</strong> để quay lại.</p></article>
-<article class="guide-card"><span class="guide-number">04</span><h3>Dùng trọng số (tùy chọn)</h3><p>Trong chế độ Quay tên hoặc Danh sách, bật <strong>Quay theo trọng số</strong>, rồi nhập một trọng số cho mỗi dòng theo đúng thứ tự danh sách.</p><p>Trọng số lớn hơn làm mục đó có cơ hội được chọn cao hơn. Dùng số không âm; cần ít nhất một trọng số lớn hơn 0.</p></article>
-<article class="guide-card"><span class="guide-number">05</span><h3>Lưu và xuất kết quả</h3><p><strong>Sao chép</strong> để lấy kết quả dạng văn bản, <strong>Xuất CSV</strong> để mở bằng Excel/Google Sheets, hoặc <strong>In kết quả</strong> để in/lưu PDF.</p><p>Lịch sử gần đây tự lưu trên trình duyệt của thiết bị. Chọn <strong>Xóa lịch sử</strong> để xóa các lượt đã lưu.</p></article>
-<article class="guide-card"><span class="guide-number">06</span><h3>Quyền riêng tư và lưu ý</h3><p>Danh sách và lịch sử được lưu cục bộ trong trình duyệt; website không tự gửi dữ liệu lên máy chủ. Dữ liệu cục bộ có thể mất nếu bạn xóa dữ liệu trình duyệt hoặc đổi thiết bị.</p><p>Vòng quay là phần hiển thị trực quan; kết quả được chọn bằng bộ sinh số ngẫu nhiên của trình duyệt. Hãy kiểm tra danh sách và trọng số trước khi quay.</p></article>
-</div>
-</section>
 <footer class="foot"><span>© <span id="year"></span> Random · Công cụ miễn phí cho mọi lựa chọn.</span><span>Dữ liệu lưu cục bộ · <a href="https://github.com/khahdihdz/Random" target="_blank" rel="noopener noreferrer">Mã nguồn mở trên GitHub</a></span></footer>
 </div><div class="toast" id="toast" role="status"></div>
 <div class="result-modal" id="resultModal" aria-hidden="true">
