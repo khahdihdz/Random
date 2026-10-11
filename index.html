@@ -148,7 +148,20 @@
     if (unique.length <= 12) return unique;
     return Array.from({length: 12}, (_, i) => unique[Math.floor(i * unique.length / 12)]);
   }
-  function renderRangePreview() {\n    const min = Number($('minNum').value), max = Number($('maxNum').value);\n    const summary = $('rangePreviewSummary'), values = $('rangePreviewValues');\n    if (!summary || !values) return;\n    const valid = Number.isSafeInteger(min) && Number.isSafeInteger(max) && min >= 1 && max <= 9999 && min <= max;\n    if (!valid) { summary.textContent = 'Dãy số chưa hợp lệ'; values.textContent = 'Nhập số nhỏ nhất và số lớn nhất hợp lệ (1–9999).'; return; }\n    summary.textContent = 'Xem đầy đủ dãy số (' + min + '–' + max + ') · ' + (max - min + 1) + ' số';\n    values.textContent = Array.from({length: max - min + 1}, (_, i) => String(min + i)).join(', ');\n  }\n  function drawWheel() {
+  function renderRangePreview() {
+    const min = Number($('minNum').value), max = Number($('maxNum').value);
+    const summary = $('rangePreviewSummary'), values = $('rangePreviewValues');
+    if (!summary || !values) return;
+    const valid = Number.isSafeInteger(min) && Number.isSafeInteger(max) && min >= 1 && max <= 9999 && min <= max;
+    if (!valid) {
+      summary.textContent = 'Dãy số chưa hợp lệ';
+      values.textContent = 'Nhập số nhỏ nhất và số lớn nhất hợp lệ (1–9999).';
+      return;
+    }
+    summary.textContent = 'Xem đầy đủ dãy số (' + min + '–' + max + ') · ' + (max - min + 1) + ' số';
+    values.textContent = Array.from({length: max - min + 1}, (_, i) => String(min + i)).join(', ');
+  }
+  function drawWheel() {
     const canvas = $('wheelCanvas');
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -315,8 +328,8 @@
     const noRepeat = $('noRepeat').checked;
     if (!Number.isSafeInteger(count) || count < 1 || count > 100) throw new Error('Số kết quả phải từ 1 đến 100.');
     if (mode === 'range') {
-      const min = 1, max = Number($('maxNum').value);
-      if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 0 || max > 9999 || min > max) throw new Error('Vui lòng nhập số nguyên lớn nhất từ 1 đến 9999.');
+      const min = Number($('minNum').value), max = Number($('maxNum').value);
+      if (!Number.isSafeInteger(min) || !Number.isSafeInteger(max) || min < 1 || max > 9999 || min > max) throw new Error('Vui lòng nhập số nguyên từ 1 đến 9999 và bảo đảm số nhỏ nhất không lớn hơn số lớn nhất.');
       const span = max - min + 1;
       if (!Number.isSafeInteger(span) || span < 1 || span > 4294967296) throw new Error('Khoảng số phải có tối đa 4.294.967.296 giá trị.');
       if (noRepeat && count > span) throw new Error('Số kết quả lớn hơn số lượng số trong khoảng.');
